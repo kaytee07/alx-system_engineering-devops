@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # displays the content of the current directory in a list format
-# print only the name after the first dash is displayed
+
 for file in *
 do
     if [ "${file:0:1}" != "." ] && [ "${file:0:1}" != "_" ] && [ -f "$file" ]

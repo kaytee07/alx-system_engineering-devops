@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# display content of  the file /etc/passwd
+
+while read -r line; do
+    username=${line%%:*}
+    uid=${line##*:*:}
+    homedir=${line##*:*:*:}
+    homedir=${homedir%%:*}
+    echo "$username:$uid:$homedir"
+done < /etc/passwd
