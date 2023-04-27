@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# display numbers from 1 to 20 and:
+# displays 4 and then bad luck from china
+# displays 8 and then bad luck from japan
+# display 17 and then bad luck from italy
+count=1
+while [ $count -le 20 ]
+do
+	echo "$count"
+	case $count in
+	     4)
+		 echo "bad luck from China"
+		 ;;
+	     9)
+		 echo "good luck from Japan"
+		 ;;
+	     17)
+		 echo "bad luck from Italy"
+		 ;;
+	esac
+	count=$((count+1))
+done
