@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# manage program manage_my_process
+
+#!/bin/bash
+
+PIDFILE=/var/run/my_process.pid
+
+if [[ "$1" == "start" ]]; then
+    ./manage_my_process &
+    echo "$!" > "$PIDFILE"
+    echo "manage_my_process started"
+elif [[ "$1" == "stop" ]]; then
+    sudo kill -15 "$(cat "$PIDFILE")" && rm -f "$PIDFILE"
+    echo "manage_my_process stopped"
+elif [[ "$1" == "restart" ]]; then
+    sudo kill -15 "$(cat "$PIDFILE")" && rm -f "$PIDFILE"
+    ./manage_my_process &
+    echo "$!" > "$PIDFILE"
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
+
+exit 0

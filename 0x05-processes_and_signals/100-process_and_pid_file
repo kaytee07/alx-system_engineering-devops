@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# display to infinity and beyond indefinitely
+# display the I have to kill command when receiving SIGTERM
+# display why you no love me when receiving sigint
+# deletes the file /var/run/myscript.pid and term itself when
+# receiving SIGINT or SIGQUIT signal
+
+echo $$ > /var/run/myscript.pid
+trap 'echo "I hate the kill command"; rm -rf /var/run/myscript.pid; exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT
+while :
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
