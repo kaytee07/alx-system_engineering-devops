@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # display list of currently running process
 
-ps axjf
+ps axuf | grep
