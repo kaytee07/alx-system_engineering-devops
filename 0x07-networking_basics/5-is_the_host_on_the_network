@@ -2,9 +2,9 @@
 # this script pings IP address passed as an argument.
 # Ping the IP 5 times
 
-if [ -n $1 ]
+if [ "$#" -lt "1" ]
 then
-    ping -c 5 $1
-else
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
+else
+    ping "$1" -c 5
 fi
