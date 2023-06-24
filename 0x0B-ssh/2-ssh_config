@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#configure ssh client configuration to our need
+Host server
+      PasswordAuthentication no
+      IdentityFile ~/.ssh/school
