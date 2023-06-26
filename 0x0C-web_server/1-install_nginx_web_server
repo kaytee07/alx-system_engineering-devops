@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # installs nginx and configure to display Hello World
 
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y update
+dufo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-service nginx start
+sudo service nginx start
