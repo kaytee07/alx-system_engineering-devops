@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# return page containing Hello Holberton
+
+mkdir -p /var/www/html
+echo 'Hello Holberton' > /var/www/html/index.html
+sudo apt update
+sudo apt -y install apache2
+echo "ServerName localhost" >> /etc/apache2.conf
+sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
+sudo service apache2 restart
