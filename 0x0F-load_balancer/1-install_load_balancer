@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/bin/env bash
 # distribute traffic across multiple servers using the round robin algorithm 
 
 sudo apt update
 sudo apt upgrade -y
-
 sudo apt install -y haproxy
 echo "ENABLED=1" > /etc/default/haproxy
 
-# Listen to web1 and web2 servers        
 echo "
    frontend myfrontend
   bind *:80
