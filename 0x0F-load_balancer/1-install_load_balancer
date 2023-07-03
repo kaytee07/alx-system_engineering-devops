@@ -1,0 +1,24 @@
+#!/bin/bash
+# distribute traffic across multiple servers using the round robin algorithm 
+
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y haproxy
+echo "ENABLED=1" > /etc/default/haproxy
+
+# Listen to web1 and web2 servers        
+echo "
+   frontend myfrontend
+  bind *:80
+  mode http
+  default_backend mybackend
+
+backend mybackend
+  mode http
+  balance roundrobin
+  server server1 52.204.97.16:80
+  server server2 52.87.212.95:80
+" >> /etc/haproxy/haproxy.cfg
+
+sudo service haproxy restart
