@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # configure nginx to contain custom HTTP header X-Served-By
-
+apt-get -y update
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
 echo "server {
    listen 80 default_server;
    listen [::]:80 default_server;
