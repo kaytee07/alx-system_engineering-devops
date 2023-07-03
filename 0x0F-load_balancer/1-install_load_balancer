@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 # distribute traffic across multiple servers using the round robin algorithm 
 
 sudo apt update
