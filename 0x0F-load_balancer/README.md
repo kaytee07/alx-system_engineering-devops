@@ -1,0 +1,2 @@
+## Load Balancer
+This has to do with distribution of network traffic based on a certain algorithm so as to prevent over reliance on a single server which may eventually leave the server non functional or slowed down service due to the over reliance on a single server 
