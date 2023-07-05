@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# make sure web server is listening at port 80 and stops after curl
+
+chmod 766 /etc/nginx/sites-enabled/default
+sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+sudo service nginx start
+pkill -o nginx
