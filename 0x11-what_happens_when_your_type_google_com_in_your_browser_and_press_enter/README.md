@@ -1,0 +1,1 @@
+An article explaining what happens if we type "google.com" in our browser and press enter
