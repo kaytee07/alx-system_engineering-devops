@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# port forward port 8080 to port 80
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+sudo iptables-save | sudo tee /etc/iptables/rules.v4
