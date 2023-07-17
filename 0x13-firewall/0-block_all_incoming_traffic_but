@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# configure ufw firewall to allow connection from port 22,80,443
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
+sudo ufw enable
