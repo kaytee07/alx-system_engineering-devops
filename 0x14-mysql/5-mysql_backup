@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# create mysql backup
+
+if [ $# -eq 0 ]; then
+  echo "Error: Please provide the MySQL root password as an argument."
+  exit 1
+fi
+
+backup_date=$(date +'%d-%m-%Y')
+
+mysqldump -u root -p"$1" --all-databases > backup.sql
+
+tar -czvf "$backup_date.tar.gz" backup.sql
+
+rm backup.sql
+
+echo "MySQL backup created successfully: $backup_date.tar.gz"
