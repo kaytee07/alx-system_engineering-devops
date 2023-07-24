@@ -35,7 +35,7 @@ def get_data(employee_id):
         print('Employee {} is done with tasks({}/{}):'.
               format(employee_name, num_of_comp_task, num_of_task))
         for task in comp_task:
-            print(f'\t{task}')
+            print(f'\t {task}')
 
     except urllib.error.HTTPError as e:
         print(f'Error: {e.code}, {e.reason}')
