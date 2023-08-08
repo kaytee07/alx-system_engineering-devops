@@ -9,17 +9,16 @@ import requests
 
 
 def count_words(subreddit, word_list, instances={}, after="", count=0):
-    base_url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "Your User Agent"}
 
-    params = {"limit": 100, "count": count}
-
-    if after:
-        params["after"] = after
-
-    response = requests.get(base_url, headers=headers,
-                            params=params, allow_redirects=False)
-
+    params = {
+        "after": after,
+        "count": count,
+        "limit": 100
+    }
+    response = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
     try:
         results = response.json()
         if response.status_code == 404:
