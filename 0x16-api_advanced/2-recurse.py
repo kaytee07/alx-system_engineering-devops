@@ -7,6 +7,7 @@ return None.
 """
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None):
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
     headers = {'User-Agent': 'Mozilla/5.0'}
